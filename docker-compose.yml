@@ -7,6 +7,7 @@ services:
       - MYSQLDB=ttrss
       - MYSQLUSER=ttrss
       - MYSQLPWD=ttrss
+    restart: always
 
   ttrss:
     build: ./ttrss
@@ -21,4 +22,5 @@ services:
       - SELF_URL_PATH='http://localhost:8080/'
     ports:
       - 8080:80
+    restart: always
 
