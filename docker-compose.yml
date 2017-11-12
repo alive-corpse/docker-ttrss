@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  mysql:
+    build: ./mysql
+    environment:
+      - MYSQLDB=ttrss
+      - MYSQLUSER=ttrss
+      - MYSQLPWD=ttrss
+
+  ttrss:
+    build: ./ttrss
+    links:
+      - mysql:mysql
+    environment:
+      - DB_NAME=ttrss
+      - DB_USER=ttrss
+      - DB_PASS=ttrss
+      - DB_HOST=mysql
+      - DB_TYPE=mysql
+      - SELF_URL_PATH='http://localhost:8080/'
+    ports:
+      - 8080:80
+

@@ -1,0 +1,6 @@
+[submodule "ttrss"]
+	path = ttrss
+	url = git@github.com:alive-corpse/alpine-ttrss.git
+[submodule "mysql"]
+	path = mysql
+	url = git@github.com:alive-corpse/alpine-mysql.git
